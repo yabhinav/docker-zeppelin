@@ -1,0 +1,18 @@
+version: '3'
+services:
+  zeppelin:
+    image: yabhinav/zeppelin:latest
+    #image: yabhinav/zeppelin:0.7.3-minimal
+    volumes:
+      - zeppelin-data:/zeppelin
+      # - ~/Downloads/zeppelin-data:/zeppelin
+    ports:
+      - "8080:8080"
+      - "4040:4040"
+    tmpfs: /tmp
+    environment:
+        ZEPPELIN_MEM: "-Xmx4g"
+        ZEPPELIN_INTP_MEM: "-Xmx4g"
+
+volumes:
+  zeppelin-data: 
