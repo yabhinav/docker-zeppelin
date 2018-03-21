@@ -9,6 +9,16 @@ python: "2.7"
 services:
   - docker
 
+# safelist
+branches:
+  only:
+  - master
+
+# blocklist
+branches:
+  except:
+  - /^[0-9.]+$/ #Blacklist release tags like 0.7.3
+
 git:
   depth: 10
 
