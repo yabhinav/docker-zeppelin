@@ -1,9 +1,11 @@
 # Docker Zeppelin CONTAINER
+[![Build Status](https://travis-ci.org/yabhinav/docker-zeppelin.svg?branch=master)](https://travis-ci.org/yabhinav/docker-zeppelin)
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/yabhinav/docker-zeppelin)
 
 ## Overview
-This docker image provides a Zeppelin server with Supported interpreters. It is uploaded in dockerhub in a public repository : [yabhinav/ansible](https://hub.docker.com/r/yabhinav/zeppelin/)
+This docker image provides a Zeppelin server with supported Interpreters like `spark`,`python`,`md` etc..  
 
-This repository contains Dockerized Zeppling Container image, published to the public Docker Hub via automated build mechanism.I use it to evaluate independently spark code in a more convenient way then a spark-shell.
+The repository [yabhinav/zeppelin](https://hub.docker.com/r/yabhinav/zeppelin/) contains Dockerized Zeppelin Container images, published to the public Docker Hub via automated build mechanism. I use it to evaluate independently spark code in a more convenient way than a `spark-shell`.
 
 ## OS Configuration
 These are Docker images for are build on top latest [Debian](https://hub.docker.com/_/debian/) container.
@@ -13,24 +15,40 @@ This Docker container contains a full Hadoop distribution with the following com
 * Oracle JDK 8
 * Zeppelin 0.7.3
 * Spark 2.2.0
-* Miniconda (R and python Datascience toolkit)
+* Miniconda Datascience toolkit (R and python)
 
-## Images and Tags:
+## Images and Tags
 
-- [`minimal` (*base/Dockerfile*)](https://github.com/yabhinav/docker-zeppelin/blob/master/minimal/Dockerfile)
-- [`latest` (*all/Dockerfile*)](https://github.com/yabhinav/docker-zeppelin/blob/master/all/Dockerfile)
+### Tags and Variants
+
+You can use the following tag to pull latest zeppelin server with all interpreters installed:
 - [`all` (*all/Dockerfile*)](https://github.com/yabhinav/docker-zeppelin/blob/master/all/Dockerfile)
-
-[![Build Status](https://travis-ci.org/yabhinav/docker-zeppelin.svg?branch=master)](https://travis-ci.org/yabhinav/docker-zeppelin)
-[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/yabhinav/docker-zeppelin)
-
-## Apache Zeppelin Docker image
 
 The image has 2 variations:  `minimal`, and `all`.
 
 * `minimal`: it includes the interpreters less than 50MB: `angular,python,shell,bigquery,file,jdbc,kylin,livy,md,postgresql,cassandra,elasticsearch`
 
 * `all`: It includes all the interpreters, so beside the interpreters listed above, the following interpreters are also included: `alluxio,ignite,lens,beam,hbase,pig,scio`
+
+Variants of the following tags available with zeppelin release versions:
+- [`minimal` (*base/Dockerfile*)](https://github.com/yabhinav/docker-zeppelin/blob/master/minimal/Dockerfile)
+- [`latest` (*all/Dockerfile*)](https://github.com/yabhinav/docker-zeppelin/blob/master/all/Dockerfile)
+
+### Pull Images
+
+For example for Zeppelin version - 0.7.3, You can pull the following images from release tags :
+
+``` bash
+$ docker pull yabhinav/zeppelin:0.7.3-all
+$ docker pull yabhinav/zeppelin:0.7.3-minimal
+```
+
+You can pull the latest image with all interpreters with command :
+
+``` bash
+$ docker pull yabhinav/zeppelin:latest
+```
+
 
 ### Start the container
 
@@ -82,3 +100,12 @@ You can bring everything down, removing the containers entirely, with the down c
 ```bash
 $ docker-compose down --volumes
 ```
+
+## License
+
+MIT / BSD
+
+
+## Author Information
+
+Created by [Abhinav Yalamanchili](https://yabhinav.github.com)

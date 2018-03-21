@@ -1,5 +1,5 @@
 ###########################################################################
-# Dockerfile for building Zepplin and Spark on Debian Stable Image      ###
+# Dockerfile for building Zeppelin and Spark on Debian Stable Image      ###
 #                                                                       ###
 # Author  : Abhinav Y <https://yabhinav.github.io>                      ###
 # Version : 0.7.3 #Indicates the Zeppelin Version                       ###
@@ -10,7 +10,7 @@ FROM debian:stable
 MAINTAINER  yabhinav <yabhinav.github.com>
 
 # Default Zeppelin Version can be overriden during docker build
-# docker build all/ --build-arg Z_VERSION=0.7.3 -t yabhinav/zeppelin:0.7.3
+# docker build all/ --build-arg Z_VERSION=0.7.3 -t yabhinav/zeppelin:0.7.3-all
 ARG Z_VERSION="0.7.3"
 ARG LOG_TAG="[ZEPPELIN_${Z_VERSION}]:"
 

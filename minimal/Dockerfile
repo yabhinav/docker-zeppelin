@@ -1,5 +1,5 @@
 ###########################################################################
-# Dockerfile for building Zepplin on Debian Stable Minimal Image        ###
+# Dockerfile for building Zeppelin on Debian Stable Minimal Image        ###
 #                                                                       ###
 # Author  : Abhinav Y <https://yabhinav.github.io>                      ###
 # Version : 0.7.3 #Indicates the Zeppelin Version                       ###
@@ -10,7 +10,7 @@ FROM debian:stable
 MAINTAINER  yabhinav <yabhinav.github.com>
 
 # Default Zeppelin Version can be overriden during docker build
-# docker build all/ --build-arg Z_VERSION=0.7.3 -t yabhinav/zeppelin:minimal
+# docker build all/ --build-arg Z_VERSION=0.7.3 -t yabhinav/zeppelin:0.7.3minimal
 ARG Z_VERSION="0.7.3"
 ARG LOG_TAG="[ZEPPELIN_${Z_VERSION}]:"
 
@@ -143,7 +143,7 @@ RUN set -xe \
 USER zeppelin
 
 ##########################################
-# Install all Interpreter(s)
+# Install Necessary Interpreter(s)
 ##########################################
 # We don't need that much memory for interpreter installation
 RUN set -xe \
